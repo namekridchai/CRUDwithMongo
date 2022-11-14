@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>update your checklist</h1>
+    <form action="/checklists/<%=c.id%>?_method=PUT" method="post">
+        <label for="name">Checklist name</label>
+        <input type="text" name = 'nameTask' id = 'name' placeholder="fill your task name" value="<%=c.nameTask%>">
+        <label for="startdate">Checklist start date</label>
+        <input type="number" name = 'startDate' id = 'startdate' placeholder="startdate" value="<%=c.startDate%>">
+        <label for="deadkine">Checklist deadline</label>
+        <input type="number" name = 'deadline' id = 'deadline' placeholder="deadline"value="<%=c.deadline%>">
+        <label for="category">select category</label>
+        <select name="importanceness" id="category">
+            <% for (let i of importanceness){ %>
+                <option value= "i"  <%=c.importanceness===i?'selected':'' %> ><%= i %>  </option>
+            <% } %> 
+        </select>
+        <button>submit</button>
+         <a href="/checklists/<%=c._id%>">cancel</a>
+    </form>
+</body>
+</html>

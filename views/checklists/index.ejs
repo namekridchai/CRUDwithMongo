@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> <%=importanceness %>  checklists</h1>
+    <ul>
+        <% for (checklist of c){ %> 
+            <li>  <a href="/checklists/<%=checklist._id %> "><%= checklist.nameTask  %></a>   </li>        
+        <% } %> 
+    </ul>
+    <a href="/checklists/new">new checklist</a>
+    <% if(importanceness!=='All'){ %> 
+        <a href="/checklists">all product</a>
+    <% } %> 
+</body>
+</html>
