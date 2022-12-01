@@ -7,8 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+    <h1><%=person.name %> </h1>
     <h1>creat your checklist</h1>
-    <form action="/checklists" method="post">
+    <form action="/people/<%=person._id%>/checklists" method="post">
         <label for="name">Checklist name</label>
         <input type="text" name = 'nameTask' id = 'name' placeholder="fill your task name">
         <label for="startdate">Checklist start date</label>
@@ -18,12 +19,12 @@
         <label for="category">select category</label>
         <select name="importanceness" id="category">
             <% for (i of importanceness){ %>
-                <option value= "i" ><%= i %> </option>
+                <option value= "<%= i %>" ><%= i %> </option>
             <% } %> 
         </select>
         <button>submit</button>
 
-
+        <a href="/people/<%=person._id %>">back to person</a>  
     </form>
 </body>
 </html>

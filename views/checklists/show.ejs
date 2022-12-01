@@ -12,6 +12,7 @@
         <li> startdate :<%=c.startDate%></li>
         <li> deadline: <%=c.deadline%></li>   
         <li> importanceness: <a href="/checklists?importanceness=<%=c.importanceness%>"><%=c.importanceness%></a></li>
+        <li>this post belonged to <a href="/people/<%=c.Person._id%>"><%=c.Person.name%></a></li>
     </ul>
 
     <a href="/checklists">All checklist</a>

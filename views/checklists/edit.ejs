@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>update your checklist</h1>
-    <form action="/checklists/<%=c.id%>?_method=PUT" method="post">
+    <form action="/checklists/<%=c._id%>?_method=PUT" method="post">
         <label for="name">Checklist name</label>
         <input type="text" name = 'nameTask' id = 'name' placeholder="fill your task name" value="<%=c.nameTask%>">
         <label for="startdate">Checklist start date</label>
