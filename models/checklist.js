@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const {Schema} = mongoose
 const checklistSchema= new mongoose.Schema({
     nameTask:  {
         type:String,
@@ -17,10 +18,13 @@ const checklistSchema= new mongoose.Schema({
     importanceness:{
         type:String,
         enum:['urgent','mustdoNUrgent','mustNotDo']
-    }
+    },
+
+    Person:
+        {type:Schema.Types.ObjectId,ref:'Person'}
+    
  
   });
-
+ 
   const Checklist = mongoose.model('Checklist', checklistSchema);
-
   module.exports = Checklist;
